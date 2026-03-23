@@ -1,6 +1,12 @@
 .{
     .name = .amiga_zig,
     .version = "0.0.1",
+    .dependencies = .{
+        .vlink = .{
+            .url = "git+https://github.com/vesim987/vlink#e2a46bcdd66dec54f15c39fdc86539c9e4436d78",
+            .hash = "vlink-0.14.3-Tkd9NkIHAAC0nguq3i1UOpCUkY07NlE3kHPGZDHHCE1g",
+        },
+    },
     .minimum_zig_version = "0.16.0-dev.2848+b4ffb402c",
     .paths = .{""},
     .fingerprint = 0xe4938a6dd8decb3a,
