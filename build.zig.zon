@@ -1,0 +1,7 @@
+.{
+    .name = .amiga_zig,
+    .version = "0.0.1",
+    .minimum_zig_version = "0.16.0-dev.2848+b4ffb402c",
+    .paths = .{""},
+    .fingerprint = 0xe4938a6dd8decb3a,
+}
