@@ -13,7 +13,7 @@ pub fn build(b: *std.Build) void {
         .optimize = .ReleaseFast,
         .root_source_file = b.path("src/main.zig"),
     });
-    main_mod.pic = false;
+    // main_mod.pic = false;
     main_mod.unwind_tables = .none;
     main_mod.omit_frame_pointer = false;
     main_mod.code_model = .medium;
@@ -22,9 +22,8 @@ pub fn build(b: *std.Build) void {
         .name = "main",
         .root_module = main_mod,
     });
-
-    main_obj.pie = false;
-    main_obj.link_emit_relocs = false;
+    // crashes llvm
+    // main_obj.bundle_compiler_rt = true;
 
     const vlink_cmd = b.addRunArtifact(vlink_dep.artifact("vlink"));
     vlink_cmd.addArgs(&.{
@@ -47,7 +46,7 @@ pub fn build(b: *std.Build) void {
         \\# Last saved: 2026-03-23 23:38:46
         \\
         \\[fs-uae]
-        \\cpu = 68020
+        \\cpu = 68040
         \\floppy_drive_count = 0
         \\hard_drive_0 = ./zig-out/bin
         \\jit_compiler = 1
